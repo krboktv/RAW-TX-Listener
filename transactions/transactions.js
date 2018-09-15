@@ -1,12 +1,10 @@
 const rp = require('./../requests/requests');
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache({stdTTL: 0, checkperiod: 0});
 
 const URL = {
     BTC: {
         getUnconfermedBalance: {
-            livenet: 'https://chain.so/api/v2/tx/BTC/',
-            testnet: 'https://tbch.blockdozer.com/insight-api/addr/mheQD68b4EBiq9JE2x1o3DPoGw41BzamCo',
+            livenet: 'https://chain.so/api/v2/get_address_spent/BTC/',
+            testnet: 'https://chain.so/api/v2/get_address_spent/BTCTEST/',
         },
         get: {
             livenet: 'https://chain.so/api/v2/tx/BTC/',
@@ -16,6 +14,7 @@ const URL = {
             livenet: 'https://insight.bitpay.com/api/tx/send/',
             testnet: 'https://test-insight.bitpay.com/api/tx/send/',
         },
+        unconfirmedBalancePath: (obj) => obj.data.unconfirmed_sent_value,
         confirmationsPath: (tx) => tx.data.confirmations,
         txidPath: (tx) => tx.data.txid,
         data: (rawtx) => {
