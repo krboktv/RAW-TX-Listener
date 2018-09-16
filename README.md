@@ -18,11 +18,11 @@ This server is intended to send raw transaction into Blockchain by turns.
 
 1. Get used output amount from first transaction
 2. This amount minus send sum minus miner fee will be you new output amount
-3. Generate tx id of first signed transaction
-  3.1.Let's say that signed data of this tx is *S*
-  3.2.Future tx id of this transaction will *sha256(sha256(S)).reverse()*
-4. Get another meta information and push it into second tx output
-5. Sign second transaction
+3. Generate tx id of first signed transaction  
+  3.1.Let's say that signed data of this tx is *S*  
+  3.2.Future tx id of this transaction will *sha256(sha256(S)).reverse()*  
+4. Get another meta information and push it into second tx output  
+5. Sign second transaction  
 
 ✅ Wait while first transaction will be confirmed
 
