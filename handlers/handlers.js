@@ -8,8 +8,15 @@ async function send(req, res) {
     const senderAddress = body.senderAddress;
     const signedTransactions = body.signedTransactions;
 
-    const result = await TransactionModule.sendTransactions(senderAddress, currency, network, signedTransactions);
-    res.send(result != undefined ? result : {error: null, result: 'success'});
+    try {
+        const result = await TransactionModule.sendTransactions(senderAddress, currency, network, signedTransactions);
+        res.send(result != undefined ? result : {error: null, result: 'success'});
+        res.end();
+    } catch (e) {
+        res.send({error: e, result: null})
+        res.end();
+    }
+
 }
 
 module.exports = {
