@@ -43,7 +43,7 @@ or
 
 sudo docker build -t listener .
 
-sudo docker run -p 3002:3002 listener
+sudo docker run -p 3003:3003 listener
 
 ```
 
