@@ -6,5 +6,5 @@ COPY . .
 
 RUN npm install
 
-EXPOSE 3002
+EXPOSE 3003
 ENTRYPOINT ["node", "server.js"]
