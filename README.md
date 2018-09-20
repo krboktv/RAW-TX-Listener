@@ -37,6 +37,16 @@ node server.js
 
 ```
 
+or
+
+```
+
+sudo docker build -t listener .
+
+sudo docker run -p 3002:3002 listener
+
+```
+
 ## How works this server?
 * **URL**
 ```/utxo_tx```
